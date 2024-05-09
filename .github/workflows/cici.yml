@@ -1,4 +1,4 @@
-name: CI
+name: CI/CD
 
 on:
   push:
@@ -22,3 +22,16 @@ jobs:
 
       - name: Build with Gradle
         run: ./gradlew clean build
+
+      - name: Get current time
+        uses: josStorer/get-current-time@v2.0.2
+        id: current_time
+        with:
+          format: 'YYYY-MM-DD HH:mm:ss'
+
+
+      - nme: Set artifact
+        run: echo "artifact=$(ls ./build/libs)" >> $GITHUB_ENV
+
+
+
