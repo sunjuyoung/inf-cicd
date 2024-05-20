@@ -9,7 +9,7 @@ public class HelloController {
 
     @GetMapping("/")
     public String hellWorld(){
-        return "Hello World";
+        return "Hello World poll SCM Test";
     }
 
 }
